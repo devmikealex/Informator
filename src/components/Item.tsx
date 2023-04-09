@@ -22,7 +22,14 @@ function Item({ item }: Props) {
                     return <Image key={index} url={imageURL} />
                 })}
             </div>
-            <div className='price'>{item.price + ' p'}</div>
+            {/* <div className='price'>{item.price + ' p'}</div> */}
+            <div className='price'>
+                {item.price.toLocaleString(undefined, {
+                    style: 'currency',
+                    currency: 'RUB',
+                    minimumFractionDigits: 0,
+                })}
+            </div>
             <Description text={item.description} />
         </div>
     )
