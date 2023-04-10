@@ -30,6 +30,12 @@ function App() {
     return (
         <div className='App'>
             <h1>Конструкторы - {data.length}</h1>
+            <div className='contents'>
+                {data.map((item: ItemType) => {
+                    if (item.id === 9999) return null
+                    return <a href={`#${item.id}`}>{item.id + ' - ' + item.title}</a>
+                })}
+            </div>
             {data.map((item: ItemType) => {
                 return <Item key={item.id} item={item} />
                 // return <div>{item.title}</div>

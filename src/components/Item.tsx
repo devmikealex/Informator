@@ -10,6 +10,7 @@ function Item({ item }: Props) {
 
     return (
         <div className={'item ' + item.id}>
+            <a id={item.id.toString()}></a>
             <Number number={item.id} />
             <h3 className='title'>
                 <a href={item.url} className='link' target='_blank'>
